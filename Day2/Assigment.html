@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Assignment.css">
+</head>
+
+<body>
+    <!-- Login Page -->
+    <div id="loginPage" class="page active">
+        <div class="auth-container">
+            <div class="auth-card">
+                <h2 class="auth-title">Student Login</h2>
+                <form id="loginForm">
+                    <div class="mb-3">
+                        <label for="loginUsername" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="loginUsername" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="loginPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="loginPassword" required>
+                    </div>
+                    <button type="submit" class="auth-button">Login</button>
+                </form>
+                <div class="auth-link">
+                    Don't have an account? <a href="#" id="showRegister">Register</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Page -->
+    <div id="registerPage" class="page">
+        <div class="auth-container">
+            <div class="auth-card">
+                <h2 class="auth-title">Student Registration</h2>
+                <form id="registerForm">
+                    <div class="mb-3">
+                        <label for="registerUsername" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="registerUsername" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="registerEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="registerEmail" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="registerPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="registerPassword" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirmPassword" required>
+                    </div>
+                    <button type="submit" class="auth-button">Register</button>
+                </form>
+                <div class="auth-link">
+                    Already have an account? <a href="#" id="showLogin">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Welcome Page -->
+    <div id="welcomePage" class="page">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container">
+                    <a class="navbar-brand d-flex align-items-center" href="#">
+                        <img src="image2.jpg" alt="School Logo" class="logo">
+                        <span class="ms-2 fs-4 fw-bold">Student Portal</span>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="file:///C:/Wipro/Day1/Timetable.html">
+                                    <button class="nav-button">Time Table</button>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <button class="nav-button">Home</button>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <button class="nav-button">Monthly Chart</button>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <button class="nav-button">Login</button>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Welcome Section -->
+        <section id="welcome" class="content-section py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-10">
+                        <h2 class="text-center mb-4">Welcome to Spring Flowers School</h2>
+                        <p class="text-center lead mb-5">View your profile, and stay updated with school information —
+                            all in one place!</p>
+
+                        <!-- About the School -->
+                        <div class="about-school mb-5">
+                            <h3 class="mb-3">About Our School</h3>
+                            <p class="mb-0">Spring Flowers School is dedicated to nurturing young minds through quality
+                                education and holistic
+                                development. Our mission is to build confidence, creativity, and curiosity in every
+                                student to help them
+                                achieve excellence in academics and life.</p>
+                        </div>
+
+                        <!-- Contact Info -->
+                        <div class="contact-info">
+                            <h3 class="mb-3">Contact Us</h3>
+                            <p class="mb-1"><strong>Address:</strong> Spring Flowers School, Hubli, Karnataka</p>
+                            <p class="mb-0"><strong>Email:</strong> info@springflowers.edu</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="bg-dark text-white text-center py-3 mt-5">
+            <p class="mb-0">&copy; 2025 Spring Flowers School | All Rights Reserved</p>
+        </footer>
+    </div>
+
+    <!-- Monthly Activities Page -->
+    <div id="monthlyActivitiesPage" class="page">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container">
+                    <a class="navbar-brand d-flex align-items-center" href="#">
+                        <img src="image2.jpg" alt="School Logo" class="logo">
+                        <span class="ms-2 fs-4 fw-bold">Student Portal</span>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" id="backToWelcomeBtn">
+                                    <button class="nav-button">Back to Welcome</button>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" id="logoutBtn2">
+                                    <button class="nav-button">Logout</button>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="activities-container">
+            <h2 class="activities-title">Monthly Activities</h2>
+
+            <div class="subject-selector">
+                <select class="form-select" id="subjectFilter">
+                    <option value="all">All Subjects</option>
+                    <option value="maths">Maths</option>
+                    <option value="physics">Physics</option>
+                    <option value="chemistry">Chemistry</option>
+                    <option value="biology">Biology</option>
+                    <option value="english">English</option>
+                    <option value="computer">Computer Science</option>
+                </select>
+            </div>
+
+            <div id="activitiesList">
+                <!-- Activities will be populated here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="Assignment.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,229 @@
+
+body {
+    margin: 0;
+    background-color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #0f172a;
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#nav-bar {
+    display: flex;
+    gap: 1.5rem;
+    margin-left: 2rem;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-button {
+    background: linear-gradient(135deg, #d50808, #e30707);
+    color: white;
+    border: none;
+    padding: 0.9rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1rem;
+    min-width: 120px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.nav-button:hover {
+    background: linear-gradient(135deg, #c0392b, #e74c3c);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
+    border: 2px solid #fff;
+}
+
+.text-decoration-none {
+    text-decoration: none;
+}
+
+/* Student Photo Section */
+#studentPhoto {
+    margin-top: 10px;
+    text-align: center;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+}
+
+#studentPhoto img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border: 5px solid #2c3e50;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/* Timetable Section Styles */
+#timetableSection {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#timetableSection h2 {
+    text-align: center;
+    color: #0f172a;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #0f172a, #d50808);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+#timetableSection table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    background: white;
+    margin-bottom: 2rem;
+}
+
+#timetableSection th {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+    padding: 1.2rem 0.8rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none;
+    position: relative;
+}
+
+#timetableSection th:first-child {
+    background: linear-gradient(135deg, #d50808, #e30707);
+}
+
+#timetableSection td {
+    padding: 1rem 0.8rem;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+#timetableSection td:first-child {
+    background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+    font-weight: 700;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+#timetableSection tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+#timetableSection tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+#timetableSection tr:hover td {
+    background-color: #f1f5f9;
+    transform: scale(1.02);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+/* Subject-specific colors */
+#timetableSection td:contains("Maths") {
+    background: linear-gradient(135deg, #6366f1, #4f46e5) !important;
+    color: white;
+}
+
+#timetableSection td:contains("Physics") {
+    background: linear-gradient(135deg, #ec4899, #db2777) !important;
+    color: white;
+}
+
+#timetableSection td:contains("Chemistry") {
+    background: linear-gradient(135deg, #14b8a6, #0d9488) !important;
+    color: white;
+}
+
+#timetableSection td:contains("Biology") {
+    background: linear-gradient(135deg, #10b981, #059669) !important;
+    color: white;
+}
+
+#timetableSection td:contains("English") {
+    background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+    color: white;
+}
+
+#timetableSection td:contains("Computer Science") {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed) !important;
+    color: white;
+}
+
+#timetableSection td:contains("History") {
+    background: linear-gradient(135deg, #f97316, #ea580c) !important;
+    color: white;
+}
+
+#timetableSection td:contains("Geography") {
+    background: linear-gradient(135deg, #06b6d4, #0891b2) !important;
+    color: white;
+}
+
+#timetableSection td:contains("Break") {
+    background: linear-gradient(135deg, #64748b, #475569) !important;
+    color: white;
+    font-style: italic;
+}
+
+#timetableSection td:contains("Physical Education"),
+#timetableSection td:contains("Art"),
+#timetableSection td:contains("Music") {
+    background: linear-gradient(135deg, #d50808, #e30707) !important;
+    color: white;
+}

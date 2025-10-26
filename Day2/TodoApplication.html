@@ -1,0 +1,48 @@
+<!-- Create a todo list application-->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    
+
+
+
+
+
+    <div id="todo-app">
+        <h1>Todo List</h1>
+        <input type="text" id="todo-input" placeholder="Enter a new todo">
+        <button id="add-todo-button">Add Todo</button>
+        <button id ="clear-todo-button">Clear Todos</button>
+        <ul id="todo-list"></ul>
+    </div>
+
+    <script>
+        const todoInput = document.getElementById('todo-input');
+        const addTodoButton = document.getElementById('add-todo-button');
+        const todoList = document.getElementById('todo-list');
+        const clearTodoButton = document.getElementById('clear-todo-button');
+
+        addTodoButton.addEventListener('click', () => {
+            const todoText = todoInput.value.trim();
+            if (todoText !== '') {
+                const listItem = document.createElement('li');
+                listItem.textContent = todoText;
+                todoList.appendChild(listItem);
+                todoInput.value = '';
+            }
+
+            clearTodoButton.addEventListener('click', () => {
+                todoList.innerHTML = '';
+            });
+        });
+
+    </script>
+
+
+ </body>
+ </html>

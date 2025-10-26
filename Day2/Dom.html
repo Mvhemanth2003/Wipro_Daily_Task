@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id = "list">
+
+        <h1> This is  a list</h1>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+        </ul>
+
+        <button id ="button">click me</button>
+    </div>
+
+    <script>
+
+        let list = document.getElementById("list");
+
+        let button = document.getElementById("button");
+
+        button.addEventListener("click", () =>
+    {
+        list.style.backgroundColor = "lightblue";
+    })
+
+
+    </script>
+
+
+ 
+<!-- Accessing DOM Elements we can use following Methods() -->
+<!-- Document.getElementById()  It selects the element by its ID -->
+<Document.GetElementByClassName()> It selects elements by their class name
+    <Document.getElementsByTagName()> It selects elements by their tag name
+        <Document.querySelector()> It selects the first element that matches a CSS selector
+            <Document.querySelectorAll()> It selects all elements that match a CSS selector -->
+
+</body>
+</html>
