@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch, Delete & Add Example</title>
+</head>
+<body>
+
+    <h1>Welcome!</h1>
+
+    <button onclick="fetchDetails()">Fetch Data</button>
+    <button onclick="deleteData()">Delete Data</button>
+    <button onclick="addUser()">Add User</button>
+
+    <div id="div" style="white-space: pre-wrap; margin-top: 20px;"></div>
+
+    <script>
+        const api = '';
+
+        // To fetch the details
+        async function fetchDetails() {
+            try {
+                const apiFetch = await fetch('https://jsonplaceholder.typicode.com/comments');
+                const data = await apiFetch.json();
+
+                let variable = document.getElementById('div');
+                variable.innerHTML = `<h3>Fetched Data:</h3> ${JSON.stringify(data, null, 2)}`;
+            } 
+            catch (error) {
+                document.getElementById('div').innerHTML = "Error fetching data: " + error;
+            }
+        }
+
+        // To delete the details
+        async function deleteData() {
+            try {
+                const apiFetch1 = await fetch('https://jsonplaceholder.typicode.com/comments/1', {
+                    method: 'DELETE'
+                });
+
+                document.getElementById('div').innerHTML = 
+                    `<h3>Delete Response:</h3> Status Code: ${apiFetch1.status}`;
+            } 
+            catch (error) {
+                document.getElementById('div').innerHTML = "Error deleting data: " + error;
+            }
+        }
+
+        // Add user
+        const Data1 = {
+            postId: 101,
+            id: 1501,
+            name: "id labore ex et quam laborum",
+            email: "Eliseo@gardner.biz",
+            body: "This is body"
+        };
+
+        async function addUser() {
+            try {
+                const apiFetch2 = await fetch('https://jsonplaceholder.typicode.com/comments', {
+                    method: 'POST',
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(Data1)
+                });
+
+                const responseData = await apiFetch2.json();
+
+                document.getElementById('div').innerHTML = 
+                    `<h3>Added User:</h3> ${JSON.stringify(responseData, null, 2)}`;
+            } 
+            catch (error) {
+                document.getElementById('div').innerHTML = "Error adding user: " + error;
+            }
+        }
+    </script>
+
+</body>
+</html>

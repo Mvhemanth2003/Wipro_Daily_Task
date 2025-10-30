@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Assignment Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .output-section {
+            margin: 15px 0;
+            padding: 15px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>JavaScript Assignment Demo</h1>
+        <button id="runButton">Run Assignment Demo</button>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        // JavaScript code
+        let courseName = "Introduction to Programming";
+        let institute = "Alliance University";
+
+        let coreSubjects = ["HTML", "CSS", "JavaScript"];
+        let advancedSubjects = ["React", "Node.js", "MongoDB"];
+        let subjects = [...coreSubjects, ...advancedSubjects];
+
+        const greetName = (name) => {
+            return `Welcome to the course, ${name}!`;
+        }
+
+        class Student {
+            constructor(name, age, skills) {
+                this.name = name;
+                this.age = age;
+                this.skills = skills;
+            }
+
+            display() {
+                return `<strong>Name:</strong> ${this.name}<br>
+                        <strong>Age:</strong> ${this.age}<br>
+                        <strong>Skills:</strong> ${this.skills.join(", ")}`;
+            }
+        }
+
+        let Student1 = new Student("Alice", 20, coreSubjects);
+        let Student2 = new Student("Bob", 22, advancedSubjects);
+
+        let map = new Map();
+        map.set("Alice", "A");
+        map.set("Bob", "B+");
+        map.set("Charlie", "A+");
+
+        let set = new Set();
+        set.add("HTML");
+        set.add("CSS");
+        set.add("JavaScript");
+        set.add("React");
+        set.add("Node.js");
+        set.add("MongoDB");
+
+        // Function to display all outputs dynamically
+        function runAssignmentDemo() {
+            const outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = ''; // Clear previous output
+
+            // 1. Course Information
+            const courseSection = document.createElement('div');
+            courseSection.className = 'output-section';
+            courseSection.innerHTML = `
+                <h3> Course Information</h3>
+                <p><strong>Course:</strong> ${courseName}</p>
+                <p><strong>Institute:</strong> ${institute}</p>
+                <p><strong>All Subjects:</strong> ${subjects.join(", ")}</p>
+            `;
+            outputDiv.appendChild(courseSection);
+
+            // 2. Greeting
+            const greetingSection = document.createElement('div');
+            greetingSection.className = 'output-section';
+            greetingSection.innerHTML = `
+                <h3> Greetings</h3>
+                <p>${greetName("Hemanth")}</p>
+                <p>${greetName("Alice")}</p>
+                <p>${greetName("Bob")}</p>
+            `;
+            outputDiv.appendChild(greetingSection);
+
+            // 3. Students Information
+            const studentsSection = document.createElement('div');
+            studentsSection.className = 'output-section';
+            studentsSection.innerHTML = `
+                <h3> Student Information</h3>
+                <div>${Student1.display()}</div>
+                <br>
+                <div>${Student2.display()}</div>
+            `;
+            outputDiv.appendChild(studentsSection);
+
+            // 4. Map Display
+            const mapSection = document.createElement('div');
+            mapSection.className = 'output-section';
+            let mapHtml = '<h3> Map Data (Student Grades)</h3>';
+            for (let [key, value] of map) {
+                mapHtml += `<strong>${key}:</strong> ${value} <br>`;
+            }
+            mapSection.innerHTML = mapHtml;
+            outputDiv.appendChild(mapSection);
+
+            // 5. Set Display
+            const setSection = document.createElement('div');
+            setSection.className = 'output-section';
+            let setHTML = '<h3>Set Data (Unique Subjects)</h3>';
+            set.forEach(value => {
+                setHTML += `${value}, `;
+            });
+            setSection.innerHTML = setHTML;
+            outputDiv.appendChild(setSection);
+
+            // 6. Additional Demonstrations
+            const demoSection = document.createElement('div');
+            demoSection.className = 'output-section';
+            demoSection.innerHTML = `
+                <h3> Additional Demonstrations</h3>
+                <p><strong>Core Subjects:</strong> ${coreSubjects.join(", ")}</p>
+                <p><strong>Advanced Subjects:</strong> ${advancedSubjects.join(", ")}</p>
+                <p><strong>Total Unique Subjects in Set:</strong> ${set.size}</p>
+                <p><strong>Total Students in Map:</strong> ${map.size}</p>
+                <p><strong>Has 'React' in Set:</strong> ${set.has("React") ? 'Yes' : 'No'}</p>
+                <p><strong>Charlie's Grade:</strong> ${map.get("Charlie") || 'Not found'}</p>
+            `;
+            outputDiv.appendChild(demoSection);
+        }
+
+        // Add event listener to the button
+        document.getElementById('runButton').addEventListener('click', runAssignmentDemo);
+    </script>
+</body>
+</html>

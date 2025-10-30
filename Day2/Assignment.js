@@ -1,4 +1,3 @@
-// Assignment.js
 // Monthly Activities Data
 const monthlyActivities = [
     { id: 1, activity: "Create project file which contains tables between 12 to 19", subject: "maths" },

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Welcome!</h1>
+
+    <script>
+
+        func1 = () =>{
+
+            console.log("Fetching Data1");
+
+            return new Promise((resolve,reject) => {
+
+                setTimeout(() => {
+
+                    resolve("Data Received");
+                },2000);
+            });
+        }
+
+        func2 = () => {
+
+            console.log("Fetching Data2");
+
+            return new Promise((resolve,reject) => {
+
+                setTimeout(() =>
+            {
+                resolve("Data reached");
+            },2000);
+            });
+        }
+
+        func1().then((message) => {
+            console.log(message);
+            func2().then((message) => {
+                console.log(message);
+            });
+        });
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

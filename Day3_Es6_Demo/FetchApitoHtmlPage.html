@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fetch API Example</title>
+</head>
+<body>
+  <h2>Todo List</h2>
+  <ul id="todoList"></ul>
+
+  <script>
+    function fetchApi() {
+      return fetch('https://jsonplaceholder.typicode.com/todos')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("This response was not ok: " + response.statusText);
+          }
+          return response.json();
+        });
+    }
+
+    fetchApi()
+      .then(data => {
+        const list = document.getElementById('todoList');
+       data.forEach(todo => {
+          const listItem = document.createElement('li');
+          listItem.innerHTML = `${todo.id}. ${todo.title} - Completed: ${todo.completed}`;
+          list.appendChild(listItem);
+        });
+      })
+      .catch(err => {
+        document.body.innerHTML += `<p style="color:red;">Error occurred: ${err}</p>`;
+      });
+  </script>
+</body>
+</html>

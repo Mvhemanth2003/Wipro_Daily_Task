@@ -1,0 +1,32 @@
+// tsconfig.json will help us in compiling the typescript files present in the folder and its subfolders
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "es6",
+    "types": ["node"],         
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dis"
+  },
+  "include": ["./**/*.ts"]
+}
+
+
+// {
+//   "compilerOptions": {
+//     "target": "ES2020",
+//     "module": "ESNext",
+//     "lib": ["ES2020", "DOM"],
+//     "strict": true,
+//     "esModuleInterop": true,
+//     "skipLibCheck": true,
+//     "forceConsistentCasingInFileNames": true,
+//     "outDir": "./dist",
+//     "rootDir": "./",
+//     "moduleResolution": "node"
+//   },
+//   "include": ["./**/*.ts"],
+//   "exclude": ["node_modules", "dist"]
+// }

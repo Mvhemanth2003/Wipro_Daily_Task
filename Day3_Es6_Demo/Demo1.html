@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Welcome!</h1>
+
+<script>
+    // Spread Opreator with array
+
+    let arr1 = [10,20,30,40,50];
+    let arr2 = [...arr1,60,70,80,90,100];
+
+    console.log("Array :" + arr2 );
+
+    // spread operator with object
+
+    let obj1 = {name:"Hemanth",age:22};
+    let obj2 = {...obj1,number:6305523376,job:"Software Developer"};
+
+    console.log("Object :" + JSON.stringify(obj2));
+
+    const Employee = {
+
+        calc_salary (salary)
+        {
+            console.log("salary :" + (salary-1000));
+        }
+    }
+
+    const emp1 =
+    {
+        name:"Hemanth",
+        salary: 50000
+
+    }
+
+    emp1.__proto__ = Employee;
+
+    emp1.calc_salary(emp1.salary);
+
+    //Function
+
+    function add(a,d)
+    {
+        console.log(a+b);
+    }
+
+    //Arrow Function
+
+    add = (a,b) =>
+    {
+        console.log(a+b);
+    }
+
+    square = (x) => console.log(x*x);
+
+    class Person {
+        constructor(name,age)
+        {
+            this.name = "Hemanth";
+        }
+
+        greet()
+        {
+            alert("Hello  " + this.name);
+        }
+    }
+
+    let hemanth = new Person("Hemanth",22)
+
+    hemanth.greet();
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>welcome!</h1>
+
+
+    <script>
+
+        let func1 = () =>
+    {
+        return new Promise((resolve,reject) =>
+    {
+        let value = true;
+        if(value)
+        {
+            resolve("Promise resolved successfully!");
+        }
+        else
+        {
+            reject("Promise rejected!");
+        }
+
+    });
+    };
+
+
+func1().then((message) => {
+    console.log(message);
+})
+.catch((error) => {
+    console.error(error);
+});
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>
