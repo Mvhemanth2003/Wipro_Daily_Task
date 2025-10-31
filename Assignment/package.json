@@ -2,9 +2,11 @@
   "name": "course-manager",
   "version": "1.0.0",
   "main": "main.js",
+  "type": "module",
   "scripts": {
     "start": "node main.js",
-    "build": "tsc"
+    "build": "tsc",
+    "dev": "tsc && node main.js"
   },
   "devDependencies": {
     "typescript": "^5.0.0"
