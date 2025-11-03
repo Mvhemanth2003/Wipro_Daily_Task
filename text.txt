@@ -1,0 +1,177 @@
+<div class="custom-accordion-wrapper">
+  <div class="product-info">
+    <div class="accordion-item">
+      <div class="accordion-header">
+        <h3>DESCRIPTION & FIT</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-content">
+        <p>This product features a comfortable loose fit design perfect for everyday wear. Made with premium materials for lasting comfort and style.</p>
+        <p><strong>Fit Guide:</strong></p>
+        <ul>
+          <li>Regular fit</li>
+          <li>True to size</li>
+          <li>Comfortable loose cut</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header">
+        <h3>MATERIALS</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-content">
+        <p><strong>Composition:</strong></p>
+        <ul>
+          <li>100% Organic Cotton, 240 GSM</li>
+          <li>Recycled Polyester Lining</li>
+        </ul>
+        <p><strong>Care Instructions:</strong></p>
+        <ul>
+          <li>Machine wash cold</li>
+          <li>Tumble dry low</li>
+          <li>Do not bleach</li>
+          <li>Iron on low heat</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header">
+        <h3>DELIVERY AND PAYMENT</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-content">
+        <p><strong>Delivery Options:</strong></p>
+        <ul>
+          <li>Standard Delivery: 3-5 business days</li>
+          <li>Express Delivery: 1-2 business days</li>
+          <li>Free shipping on orders over RS:2999/-</li>
+        </ul>
+        <p><strong>Payment Methods:</strong></p>
+        <ul>
+          <li>Credit/Debit Cards</li>
+          <li>UPI</li>
+          <li>Phone Pay</li>
+          <li>Google Pay</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+/* Wrapper to control horizontal spacing */
+.custom-accordion-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start; /* keep alignment to left of wrapper */
+  box-sizing: border-box;
+
+  /* Move box towards right */
+  padding-left: 49%;   /* increase this number → box moves more right */
+}
+
+/* Accordion box */
+.product-info {
+  width: 90%;       /* original width */
+  max-width: 600px; /* original max width */
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+}
+
+/* Accordion items */
+.accordion-item {
+  border-bottom: 1px solid #eee;
+}
+.accordion-item:last-child {
+  border-bottom: none;
+}
+
+/* Accordion header */
+.accordion-header {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background: white;
+  transition: background-color 0.3s ease;
+}
+.accordion-header:hover {
+  background-color: #f8f8f8;
+}
+.accordion-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+.accordion-icon {
+  font-size: 18px;
+  color: #666;
+  transition: transform 0.3s ease;
+}
+
+/* Accordion content */
+.accordion-content {
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: white;
+}
+.accordion-content.active {
+  padding: 20px;
+  max-height: 500px;
+}
+.accordion-content p,
+.accordion-content ul {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+.accordion-content ul {
+  margin-left: 30px;
+}
+.accordion-header.active .accordion-icon {
+  transform: rotate(45deg);
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
+  .custom-accordion-wrapper {
+    padding-left: 0;
+    padding-right: 0;
+    justify-content: center; /* center box on mobile */
+  }
+  .product-info {
+    width: 90%; /* full width on mobile */
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+  accordionHeaders.forEach(header => {
+    header.addEventListener('click', function() {
+      const content = this.nextElementSibling;
+
+      // Close all other accordions
+      accordionHeaders.forEach(otherHeader => {
+        if (otherHeader !== this) {
+          otherHeader.classList.remove('active');
+          otherHeader.nextElementSibling.classList.remove('active');
+        }
+      });
+
+      // Toggle current accordion
+      this.classList.toggle('active');
+      content.classList.toggle('active');
+    });
+  });
+});
