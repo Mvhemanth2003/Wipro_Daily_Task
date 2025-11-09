@@ -1,0 +1,28 @@
+return (
+    <div style={{ maxWidth: 800, margin: '36px auto', padding: '0 16px' }}>
+      <nav style={{ marginBottom: 20 }}>
+        <Link to="/" style={{ marginRight: 12 }}>Home</Link>
+        <Link to="/about" style={{ marginRight: 12 }}>About</Link>
+        <Link to="/contact">Contact</Link>
+      </nav>
+
+      {/* TransitionGroup watches location changes */}
+      <TransitionGroup>
+        {/* CSSTransition applies classes for enter/exit using location.pathname as key */}
+        <CSSTransition
+          key={location.pathname}
+          classNames="page"
+          timeout={300}
+        >
+          {/* Use Routes with 'location' so React Router renders the right element */}
+          <div className="route-wrapper">
+            <Routes location={location}>
+              <Route path="/" element={<Home />} />
+         <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </div>
+        </CSSTransition>
+      </TransitionGroup>
+    </div>
+  );

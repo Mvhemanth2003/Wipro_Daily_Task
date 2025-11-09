@@ -1,0 +1,85 @@
+//Minimal page components
+src/pages/Home.jsx// src/pages/Home.jsx
+import React from 'react';
+
+export default function Home() {
+  return (
+    <div className="page">
+      <h2>Home</h2>
+      <p>This is the Home page. Navigate away to see the <strong>exit</strong> transition (transition from).</p>
+    </div>
+  );
+}
+// src/pages/About.jsx
+import React from 'react';
+
+export default function About() {
+  return (
+    <div className="page">
+      <h2>About</h2>
+      <p>About page — this will <em>transition into</em> view when navigated to.</p>
+    </div>
+  );
+}
+// src/pages/Contact.jsx
+import React from 'react';
+
+export default function Contact() {
+  return (
+    <div className="page">
+      <h2>Contact</h2>
+      <p>Contact page content here. Try using the back button to observe the exit animation.</p>
+    </div>
+  );
+}
+/* src/index.css - basic layout + transition CSS */
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  margin: 0;
+  padding: 24px;
+  background: #f7fafc;
+  color: #111827;
+}
+
+/* small wrapper to enable overflow hidden during animation */
+.route-wrapper {
+  position: relative;
+  min-height: 160px;
+  overflow: hidden;
+}
+
+/* page base styling */
+.page {
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+/* CSSTransition classes named "page" (classNames="page") */
+/* Entering (when navigating *into* a route) */
+.page-enter {
+  opacity: 0;
+  transform: translateY(12px);
+}
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms ease-out, transform 300ms ease-out;
+}
+
+/* Exiting (when navigating *from* a route) */
+.page-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+.page-exit-active {
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 250ms ease-in, transform 250ms ease-in;
+}
+
+Faculty (Olympus) 5:15 PM
+Transition into = the enter animation when a new route/component is mounted. In CSS: .page-enter → .page-enter-active.
+Transition from = the exit animation when the current route/component is unmounted (navigating away). In CSS: .page-exit → .page-exit-active.
+TransitionGroup + CSSTransition coordinate mounting/unmounting so both enter and exit animations run cleanly.
+Using location and key={location.pathname} ensures unique transitions per route path.
