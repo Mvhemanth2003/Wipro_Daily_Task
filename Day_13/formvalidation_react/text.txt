@@ -1,0 +1,127 @@
+Lazy Loading is a performance optimization technique that loads components only when needed instead of loading everything upfront.
+Code Splitting is the process of breaking the app bundle into smaller chunks, so only the required code loads initially.
+ Key Concepts
+By default, React bundles all components into one large JS file.
+With lazy loading, components are loaded on-demand.
+Reduces initial load time and improves app performance.
+React Functions Used
+React.lazy() → To define a lazy-loaded component.
+Suspense → To show fallback UI (like a loader) while the component loads.
+ Benefits
+Improves app performance
+Reduces initial bundle size
+Faster first paint (FCP)
+Useful for routes and large feature modules
+Step-by-Step Example (Concept Flow)
+Import React, Suspense, and lazy.
+Convert your component import using React.lazy(() => import('./Component')).
+Wrap it with <Suspense fallback={<Loader />}>.
+Component loads only when rendered.
+A Pure Component in React automatically handles shallow comparison of props and state to prevent unnecessary re-renders.
+Key Concept
+It extends React.PureComponent instead of React.Component.
+React automatically checks if props or state changed.
+If not changed, the component won’t re-render — optimizing performance.
+When to Use
+When component output depends only on props/state.
+When you want to avoid redundant renders for unchanged data.
+Benefits
+Performance optimization
+Reduces unnecessary DOM updates
+Cleaner and faster UI rendering
+Limitations
+Works only with shallow comparison (nested objects won’t re-render if inner values change).
+ Should not be used if the component relies on side effects or mutable props.
+
+Faculty (Olympus) 4:18 PM
+Prevents app from crashing
+Provides user-friendly fallback UI
+ Logs errors for debugging or monitoring
+static getDerivedStateFromError(error)
+componentDidCatch(error, info)
+Works like a try-catch block for React components.
+Catches rendering errors, lifecycle errors, or errors in constructors of child components.
+Does not catch event handler or async errors.
+Limitations
+Can’t catch errors in event handlers or async code
+Must wrap around components that might fail
+Step-by-Step Example (Concept Flow)
+Create an ErrorBoundary class extending React.Component.
+Define state for hasError.
+Implement getDerivedStateFromError() and componentDidCatch().
+Wrap your vulnerable component with <ErrorBoundary>.
+Modern web applications often suffer from slow loading times, unnecessary re-renders, and complete crashes when an error occurs in one component. Additionally, handling UI elements like modals or tooltips outside the component hierarchy can be challenging.
+
+Faculty (Olympus) 4:28 PM
+Step 1: Creating a project 
+Step 2: Need to follow below like app structure 
+	src/
+index.js — app root, mount point
+
+App.jsx — main router / demo page
+
+pages/
+
+Home.jsx — main landing page with links to examples
+
+HeavyPage.jsx — large component to lazy-load
+
+components/
+
+PureDisplay.jsx — small presentational component implemented as a Pure Component
+
+ErrorBoundary.jsx — error boundary wrapper
+
+ModalPortal.jsx — component that renders via a Portal
+
+PortalHost.jsx — container wrapper to mount portal node (optional)
+
+utils/ (optional)
+
+fakeApi.js — simulate async load if needed
+
+index.css — tiny styles
+
+
+
+
+https://lottiefiles.com/free-animations/loading
+https://loading.io/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
