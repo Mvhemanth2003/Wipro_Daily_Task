@@ -1,0 +1,91 @@
+The React Context API is a feature that allows data to be shared across the entire component 
+tree without having to pass props manually at every 
+level. It helps manage global state such as themes, user authentication,
+ language preferences, or app configurations.
+
+ Context API solves lot of challenges by:
+Providing a global-like store accessible to all components.
+Eliminating prop drilling.
+Simplifying state management for small-to-medium applications.
+In large React applications, data often needs to be accessed by multiple components at different levels in the component tree.
+Normally, props have to be passed down manually (“prop drilling”), which becomes cumbersome and error-prone.
+---------------------------------------------------------------------------------------------------------------------------------------
+A Progressive Web App (PWA) is a type of web application that uses modern web capabilities to deliver an app-like experience to users.
+It’s built using standard web technologies — HTML, CSS, and JavaScript — but behaves like a native mobile app on devices.
+PWAs can be installed on a user’s home screen, work offline, and send push notifications — without going through app stores.
+Seamless Cross-Platform Experience
+Offline Functionality
+No App Store Dependencys
+ Fast Performance
+Engaging User Experience
+Cost-Effective Development
+Better Discoverability
+ Smaller Size & Instant Updates
+
+ Getting started with PWA : 
+Step 1: Create a react App 
+Step 2: Enable PWA Support 
+Step 3: Registering a service worker registration 
+Step 4: Adding a manifest file (description file in json format)
+Step 5: Running above application and checking for install button
+
+npm install --save-dev workbox-core workbox-precaching workbox-routing // to install pwa 
+
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+serviceWorkerRegistration.register(); // in index
+--------------------------------------------------------------------------------------------
+
+npx create-react-app my-pwa-demo --template cra-template-pwa
+
+This will generate serviceWorkerRegistration.js file
+
+Faculty (Olympus) 12:51 PM
+npx create-react-app my-pwa-demo --template cra-template-pwa
+----------------------------------------------------------------------------------------------
+
+
+
+Test PWA Features
+Open Chrome DevTools → Application Tab:
+Manifest
+Shows app name, theme color, icons, and start URL.
+Confirms that your app is installable.
+Service Worker
+Should say “activated and running”
+Go offline and refresh — app still works due to caching!
+Lighthouse Audit
+Go to Lighthouse in Chrome DevTools:
+Run a PWA audit
+You’ll see scores for “Progressive Web App” compliance (should be green).
+
+Faculty (Olympus) 1:18 PM
+Productivity Dashboard Web App"
+Project Context
+You have been hired as a Frontend Developer to build a Productivity Dashboard Web App for a company that helps users manage their daily goals, tasks, and themes across devices.
+The application must use React and demonstrate modern best practices — including Context API, React Hooks, Redux Toolkit, and PWA capabilities — to ensure scalability, maintainability, and offline usability.
+ User Stories
+Epic 1: Application Setup & Offline Experience (PWA)
+User Story 1:
+As a user, I should be able to install the web application on my desktop or mobile device, so that I can access it just like a native app.
+Acceptance Criteria:
+The app should have a valid manifest.json with name, icons, and theme color.
+The app should work offline using service workers (default cache strategy).
+Users should see an “Install App” prompt.
+User Story 2:
+As a user, I should be able to open the app even without an internet connection and still view my last saved tasks.
+Acceptance Criteria:
+Service Worker caches static assets.
+Fallback content is displayed when offline.
+Optional: Use localStorage or IndexedDB to persist recent tasks.
+Epic 2: Theme & User Preference (React Context API)
+User Story 3:
+As a user, I want to switch between light and dark mode so that I can customize the appearance of the dashboard.
+ Acceptance Criteria:
+Theme preference (light/dark) should be managed via React Context API.
+The theme should persist across all pages.
+The toggle button updates theme globally.
+User Story 4:
+As a user, I want to see my name displayed on the dashboard once I log in, so that I feel my session is personalized.
+Acceptance Criteria:
+The user data (name, login status) is stored and shared using Context.
+Components like Header or Profile can access user data without prop drilling.
