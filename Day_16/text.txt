@@ -1,0 +1,47 @@
+Example: Reading and Writing Files
+Step 1: Creating a ref 
+const fs = require('fs');
+//Step 2:  Writing data to a file
+fs.writeFile('example.txt', 'Hello Node.js File System!', (err) => {
+  if (err) throw err;
+  console.log('File written successfully.');
+  // Step 3: Reading the file
+  fs.readFile('example.txt', 'utf8', (err, data) => {
+    if (err) throw err;
+    console.log('File content:', data);
+  });
+
+});
+-----------------------------------------------------------------------------------
+Example with Promises ( they act as Boolean variables because they make sure either they are 
+executed or they fails eventually )A Promise provides 
+a cleaner, more structured way to handle asynchronous programming using .then(), .catch(), and .finally() methods.
+
+const fs = require('fs').promises;
+async function readFileExample() {
+  try {
+    const data = await fs.readFile('example.txt', 'utf8');
+    console.log(data);
+  } catch (err) {
+    console.error(err);
+  }
+} readFileExample()
+----------------------------------------------------------------------------------------------
+const https = require('https');
+const fs = require('fs');
+
+const options = {
+  key: fs.readFileSync('key.pem'),
+  cert: fs.readFileSync('cert.pem')
+};
+
+https.createServer(options, (req, res) => {
+  res.writeHead(200);
+  res.end('Secure HTTPS Server');
+}).listen(8443, () => {
+  console.log('HTTPS Server running on https://localhost:8443');
+});
+
+
+
+
