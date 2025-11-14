@@ -1,0 +1,66 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "title": "The Psychology of Money",
+      "author": "Morgan Housel",
+      "price": 420
+    },
+    {
+      "id": "2",
+      "title": "Can’t Hurt Me",
+      "author": "David Goggins",
+      "price": 550
+    },
+    {
+      "id": "3",
+      "title": "The Subtle Art of Not Giving ",
+      "author": "Mark Manson",
+      "price": 499
+    },
+    {
+      "id": "4",
+      "title": "Think Like a Monk",
+      "author": "Jay Shetty",
+      "price": 460
+    },
+    {
+      "id": "5",
+      "title": "Sapiens",
+      "author": "Yuval Noah Harari",
+      "price": 650
+    },
+    {
+      "id": "d755",
+      "title": "Apply happiness",
+      "author": "Mv Hemanth",
+      "price": 599
+    }
+  ],
+  "authorData": {
+    "Morgan Housel": {
+      "bio": "Morgan Housel is a partner at The Collaborative Fund and author of 'The Psychology of Money.'",
+      "topBooks": [
+        "The Psychology of Money",
+        "Same As Ever",
+        "The Collaborative Edge"
+      ]
+    },
+    "David Goggins": {
+      "bio": "David Goggins is a retired Navy SEAL and motivational speaker known for his mental toughness.",
+      "topBooks": [
+        "Can’t Hurt Me",
+        "Never Finished",
+        "Live Unbreakable"
+      ]
+    },
+    "Mark Manson": {
+      "bio": "Mark Manson is a blogger and author focusing on personal development and self-help.",
+      "topBooks": [
+        "The Subtle Art of Not Giving ",
+        "Everything Is F*cked",
+        "Models"
+      ]
+    }
+  }
+}
