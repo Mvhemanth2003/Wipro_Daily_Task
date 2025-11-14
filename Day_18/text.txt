@@ -1,0 +1,48 @@
+Asynchronous Programming in Node.js
+What is Asynchronous programming ?
+Real life ex of Sync and Async programming ?
+Limitations of Async programming ?
+Implementing different  types of async techniques in Nodejs?
+What are different ways to implement Async in Nodejs?
+What is callback hell ?
+Callbacks
+Promises
+Why are promises used?
+Async/Await
+Which method is best suited at what scenario ?
+
+------------------------------------------------------------------------------------
+A company named FoodExpress is building a simple Order Processing System for their food delivery platform.
+The system must perform three operations asynchronously:
+Fetch order details from a mock database
+Process payment
+Generate invoice
+These operations will be implemented using:
+Callbacks
+Promises
+Async/Await
+Each approach is demonstrated using user stories and code.
+
+USER STORY 2 (Promises)
+Title: Process payment using Promises
+As a backend developer
+I want to process an order’s payment using Promises
+So that the flow becomes readable and avoids callback hell.
+Acceptance Criteria
+Function should return a Promise
+Must handle both resolve and reject cases
+Promise chain should demonstrate .then() and .catch()
+
+Order Retrieval starts with Callbacks
+This simulates older Node.js APIs (fs, http, database drivers earlier versions).
+Payment Processing is implemented using Promises
+Demonstrates modernization and better error management.
+Invoice Generation uses Async/Await
+Shows clean, synchronous-like asynchronous flow.
+
+
+
+
+
+
+json-server --watch db.json --port 5000

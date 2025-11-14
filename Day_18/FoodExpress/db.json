@@ -1,0 +1,7 @@
+{
+  "orders": [
+    { "id": 101, "item": "Pizza", "amount": 299 },
+    { "id": 102, "item": "Burger", "amount": 199 },
+    { "id": 103, "item": "Pasta", "amount": 249 }
+  ]
+}
