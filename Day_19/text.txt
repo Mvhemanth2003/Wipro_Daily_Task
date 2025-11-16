@@ -1,0 +1,27 @@
+User Story No.
+User Story Description
+Acceptance Criteria
+Route / Method
+US-01
+As a user, I want to fetch all students so that I can view available students and their skills.
+- Should return complete list of students- Should return an empty array if no students exist
+GET /students
+US-02
+As a user, I want to view a student’s details by ID so that I can check their course and skills.
+- Validate if ID exists- If not found return { message: "Student not found" }
+GET /students/:id
+US-03
+As an admin, I want to add a new student so that I can track their skills and progress.
+- Required fields: name, skills, course- Middleware validates request body- Auto-generate ID- Return created student object
+POST /students
+US-04
+As an admin, I want to update student details so that records stay accurate.
+- Validate if ID exists- Update only provided fields- Return updated student
+PUT /students/:id
+US-05
+As an admin, I want to delete a student so that inactive records can be removed.
+- Validate if ID exists- Remove the student- Return success message
+DELETE /students/:id\
+
+
+
