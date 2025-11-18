@@ -1,0 +1,76 @@
+/* Reset root styling */
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: #213547;
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Remove default CRA/Vite body flex (THIS FIXES HALF SCREEN) */
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #f5f7fb;
+  display: block !important;   /* make sure nothing forces flex */
+}
+
+/* Root app wrapper for safety */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: block;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: #0d6efd;
+}
+
+a:hover {
+  color: #0b5ed7;
+}
+
+/* Active navbar link */
+.nav-link.active {
+  font-weight: 600;
+  color: #0d6efd !important;
+}
+
+/* Buttons (optional UI enhancement) */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background-color: #e2e6ea;
+}
+
+/* Improve container spacing */
+.container,
+.container-fluid {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* Box sizing */
+* {
+  box-sizing: border-box;
+}

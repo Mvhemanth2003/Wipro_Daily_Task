@@ -1,0 +1,150 @@
+{
+  "packages": [
+  {
+    "id": 1,
+    "title": "Paris Getaway",
+    "location": "Paris, France",
+    "nights": 4,
+    "price": 799,
+    "image": "https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg",
+    "rating": 4.8
+  },
+  {
+    "id": 2,
+    "title": "Bali Escape",
+    "location": "Bali, Indonesia",
+    "nights": 6,
+    "price": 999,
+    "image": "https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg",
+    "rating": 4.9
+  },
+  {
+    "id": 3,
+    "title": "Swiss Alps Adventure",
+    "location": "Interlaken, Switzerland",
+    "nights": 5,
+    "price": 1299,
+    "image": "https://images.pexels.com/photos/1461974/pexels-photo-1461974.jpeg",
+    "rating": 4.7
+  },
+  {
+    "id": 4,
+    "title": "Santorini Luxury Stay",
+    "location": "Santorini, Greece",
+    "nights": 4,
+    "price": 1499,
+    "image": "https://images.pexels.com/photos/3601421/pexels-photo-3601421.jpeg",
+    "rating": 4.8
+  },
+  {
+    "id": 5,
+    "title": "Tokyo City Explorer",
+    "location": "Tokyo, Japan",
+    "nights": 5,
+    "price": 1599,
+    "image": "https://images.pexels.com/photos/208701/pexels-photo-208701.jpeg",
+    "rating": 4.9
+  },
+  {
+    "id": 6,
+    "title": "New York Highlights",
+    "location": "New York, USA",
+    "nights": 4,
+    "price": 1399,
+    "image": "https://images.pexels.com/photos/466685/pexels-photo-466685.jpeg",
+    "rating": 4.6
+  },
+  {
+    "id": 7,
+    "title": "Dubai Premium Tour",
+    "location": "Dubai, UAE",
+    "nights": 3,
+    "price": 899,
+    "image": "https://images.pexels.com/photos/161956/modern-architecture-city-building-glass-161956.jpeg",
+    "rating": 4.8
+  },
+  {
+    "id": 8,
+    "title": "Singapore Family Package",
+    "location": "Singapore",
+    "nights": 4,
+    "price": 999,
+    "image": "https://images.pexels.com/photos/3586966/pexels-photo-3586966.jpeg",
+    "rating": 4.7
+  },
+  {
+    "id": 9,
+    "title": "Goa Beach Vacation",
+    "location": "Goa, India",
+    "nights": 3,
+    "price": 499,
+    "image": "https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg",
+    "rating": 4.5
+  },
+  {
+    "id": 10,
+    "title": "Maldives Water Villa",
+    "location": "Maldives",
+    "nights": 5,
+    "price": 1999,
+    "image": "https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg",
+    "rating": 5.0
+  }
+],
+"featuredDestinations": [
+  {
+    "id": 1,
+    "title": "Paris Getaway",
+    "location": "Paris, France",
+    "price": 799,
+    "image": "https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg"
+  },
+  {
+    "id": 2,
+    "title": "Bali Escape",
+    "location": "Bali, Indonesia",
+    "price": 999,
+    "image": "https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg"
+  },
+  {
+    "id": 3,
+    "title": "Swiss Alps",
+    "location": "Interlaken, Switzerland",
+    "price": 1299,
+    "image": "https://images.pexels.com/photos/1461974/pexels-photo-1461974.jpeg"
+  },
+  {
+    "id": 4,
+    "title": "Santorini Escape",
+    "location": "Santorini, Greece",
+    "price": 1499,
+    "image": "https://images.pexels.com/photos/3601421/pexels-photo-3601421.jpeg"
+  },
+  {
+    "id": 5,
+    "title": "Tokyo Experience",
+    "location": "Tokyo, Japan",
+    "price": 1599,
+    "image": "https://images.pexels.com/photos/208701/pexels-photo-208701.jpeg"
+  },
+  {
+    "id": 6,
+    "title": "New York Highlights",
+    "location": "New York, USA",
+    "price": 1399,
+    "image": "https://images.pexels.com/photos/466685/pexels-photo-466685.jpeg"
+  }
+],
+  "bookings": [
+    {
+      "id": "0ad2",
+      "name": "Muthyala Veera Hemanth",
+      "email": "mvhemanth2003@gmail.com",
+      "phone": "06305523376",
+      "destination": "Interlaken, Switzerland",
+      "travellers": 5,
+      "startDate": "2025-11-19",
+      "notes": ""
+    }
+  ]
+}
