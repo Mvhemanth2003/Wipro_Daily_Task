@@ -1,0 +1,127 @@
+Module Adoption Details
+Step 1. Basic Routing
+Scenario
+Users needed to fetch a list of skills.
+Implementation
+app.get('/skills', (req, res) => {
+    res.json(skillList);
+});
+Step 2. CRUD Routes (GET, POST, PUT, DELETE)
+Scenario
+Admin needed full CRUD capability to manage skill data.
+Step 3. Dynamic Routes & Parameters
+Scenario
+Student needed access to a specific skill details page.
+Old Implementation
+Manually parsed URLs using req.url.split('/').
+New Implementation in Express
+app.get('/skills/:id', (req, res) => {
+    const skill = skillList.find(s => s.id === Number(req.params.id));
+});
+Step 4. Route Middleware Adoption
+Scenario
+EduPlus wanted:
+Logging
+Body validation
+ID validation
+Authentication (future)
+
+Logging Middleware
+app.use((req, res, next) => {
+    console.log(`${req.method} ${req.url} - ${Date.now()}`);
+    next();
+});
+Outcome
+API monitoring improved
+
+Reduced debugging time by 60%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
