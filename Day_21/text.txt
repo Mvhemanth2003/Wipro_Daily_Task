@@ -1,0 +1,27 @@
+Steps for implementing simplest middleware ?
+Step 1: Create abs express application using const express = require(‘express’).
+Step 2: Define a middleware function with parameters req, res and next.
+Step 3:  Use app.use()   to register the middleware globally.
+Step 4: Log or modify the request object inside the function.
+Step 5: Call next() to pass control to the next layer.
+Step 6: Add route after middleware so the request flows through it.
+Step 7: Run the server and test it.
+
+Faculty (Olympus) 11:51 AM
+npm init -y
+npm install express
+
+// Client Request -> Custom Middleware logs request method and url and add requestTime 
+property  -> Route Handler -> Response to Client
+
+
+
+
+
+
+
+
+
+
+
+
