@@ -30,3 +30,10 @@ app.post('/login', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+
+
+
+
+// Example curl command:
+// curl -X POST http://localhost:3000/login -H "Content-Type: application/json" -d '{"username":"testuser", "password":"Login
