@@ -1,0 +1,100 @@
+// here we will implemnt Login API that returns JWT token upon successful login
+// Step 1: basics express Server setup 
+// Step 2: Create a dummy user ( Hardcoded Username and password )
+// Step 3: Create a login route that accepts username and password
+// Step 4: Validate the credentials
+// Step 5: If valid, generate JWT token and return it in response
+// Step 6: If invalid, return an error message
+
+
+Creating RESTful APIs with Express.js ( Must in capstone project)
+Step 1: Initialize an express project 
+Step 2: Create route
+Step 3: Connect to DB( Mongo DB )
+Step 4: Return a JSON response ( that can be consumed in the front ends ie react ) 
+Step 5: test it with Postman or curl
+simple-rest-demo
+ ├── controllers
+ │     └── studentController.js
+ ├── routes
+ │     └── studentRoutes.js
+ ├── server.js
+ └── package.json
+
+
+
+// Controllers is resiponsible for having business logic
+// here we can define temprary in memory data/array of students 
+let students = [
+    { id: 1, name: 'John Doe', age: 20 },
+    { id: 2, name: 'Jane Smith', age: 22 },
+    { id: 3, name: 'Sam Brown', age: 19 }
+];
+
+// Get all students 
+exports.getAllStudents = (req, res) => {
+    res.json(students);
+};
+// Get a student by ID
+exports.getStudentById = (req, res  ) => {
+    const studentId = parseInt(req.params.id);
+    const student = students.find(s => s.id === studentId); 
+    if (student) {
+        res.json(student);
+    }   
+    else {
+        res.status(404).json({ message: 'Student not found' });
+    }   
+};
+// Create a new student
+exports.createStudent = (req, res) => {
+    const newStudent = {    
+        id: students.length + 1,
+        name: req.body.name,
+        age: req.body.age
+    };
+    students.push(newStudent);
+    res.status(201).json(newStudent);
+};
+// Update a student by ID
+exports.updateStudent = (req, res) => {
+    const studentId = parseInt(req.params.id);  
+    const student = students.find(s => s.id === studentId);
+    if (student) {
+        student.name = req.body.name || student.name;
+        student.age = req.body.age || student.age;
+        res.json(student);
+    }
+    else {
+        res.status(404).json({ message: 'Student not found' });
+    }   
+};  
+// Delete a student by ID
+exports.deleteStudent = (req, res) => {
+    const studentId = parseInt(req.params.id);  
+    const index = students.findIndex(s => s.id === studentId);
+    if (index !== -1) {
+        students.splice(index, 1);
+        res.json({ message: 'Student deleted successfully' });
+    } else {
+        res.status(404).json({ message: 'Student not found' });
+    }
+};
+
+
+
+
+
+// in routes.js we will defines all the routes for our application ie URLs
+const express = require('express');
+const router = express.Router();
+const studentController = require('../controllers/studentController');  
+// Define routes and link them to controller functions
+router.get('/students', studentController.getAllStudents);
+router.get('/students/:id', studentController.getStudentById);
+router.post('/students', studentController.createStudent);
+router.put('/students/:id', studentController.updateStudent);
+router.delete('/students/:id', studentController.deleteStudent);
+module.exports = router;
+
+// this file exlusively handles routing and delegates the actual logic to the controller functions defined in studentController.js
