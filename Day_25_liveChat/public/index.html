@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket.io Chat</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            padding: 30px;
+        }
+        #chat-container {
+            width: 350px;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: auto;
+            box-shadow: 0px 0px 10px #bbb;
+        }
+        #messages {
+            height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            background: #fafafa;
+        }
+        #message-input {
+            width: 70%;
+            padding: 8px;
+        }
+        #send-button {
+            width: 25%;
+            padding: 8px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #send-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Chat UI -->
+    <div id="chat-container">
+        <div id="messages"></div>
+        <input type="text" id="message-input" placeholder="Type a message...">
+        <button id="send-button">Send</button>
+    </div>
+
+    <!-- Load Socket.io -->
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script>
+        const socket = io();
+        const messages = document.getElementById('messages');
+        const messageInput = document.getElementById('message-input');
+        const sendButton = document.getElementById('send-button');
+
+        // Send message to server
+        sendButton.addEventListener('click', () => {
+            const message = messageInput.value.trim();
+            if (message) {
+                socket.emit('message', message);
+                messageInput.value = '';
+            }
+        });
+
+        // Send on Enter key
+        messageInput.addEventListener('keydown', (e) => {
+            if (e.key === "Enter") {
+                sendButton.click();
+            }
+        });
+
+        // Receive messages from server
+        socket.on('message', (message) => {
+            const div = document.createElement('div');
+            div.textContent = message;
+            div.style.margin = "5px 0";
+            messages.appendChild(div);
+
+            // Auto-scroll to bottom
+            messages.scrollTop = messages.scrollHeight;
+        });
+    </script>
+
+</body>
+</html>
