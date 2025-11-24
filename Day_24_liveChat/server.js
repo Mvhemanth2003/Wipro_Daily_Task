@@ -1,7 +1,7 @@
 
 const express = require('express');
 const http = require('http');             // Needed to attach socket.io
-const { Server } = require('socket.io');  // Correct socket.io import
+const { Server } = require('socket.io');  //  socket.io import
 
 const app = express();
 const PORT = 3000;
@@ -17,7 +17,7 @@ const io = new Server(server, {
     }
 });
 
-// Serve static files (HTML, JS, CSS) from "public" folder
+// Serve static files from "public" folder
 app.use(express.static('public'));
 
 // Basic route

@@ -7,7 +7,7 @@ Step 5: Call next() to pass control to the next layer.
 Step 6: Add route after middleware so the request flows through it.
 Step 7: Run the server and test it.
 
-Faculty (Olympus) 11:51 AM
+
 npm init -y
 npm install express
 
